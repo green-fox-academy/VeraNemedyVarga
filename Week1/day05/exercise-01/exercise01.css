@@ -1,0 +1,31 @@
+p {
+  /*width: 350px;
+  height: 130px;*/
+  margin: 0;
+  font-size: 18px;
+  font-family: sans-serif;
+  color: black;
+  border: 2px solid black;
+  padding: 20px;
+
+  /*padding-top: 40px;*/
+  /*box-sizing: border-box;*/
+}
+
+.container {
+  /*border: 1px solid #black;*/
+  width: 340px;
+  height: 880px;
+}
+
+p:hover {
+  background-color: red;
+}
+
+p:first-of-type {
+  border-top-style: none;
+}
+
+p:last-of-type {
+  border-bottom-style: none;
+}

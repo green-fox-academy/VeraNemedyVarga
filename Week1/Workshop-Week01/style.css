@@ -1,0 +1,154 @@
+main {
+}
+
+.heading {
+  background: url("anakin.png") 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  width: 1295px;;
+  height: 408px;
+}
+
+section {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+  color: #222222;
+}
+
+h1 {
+  /*background: url("anakin.png") 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  width: 1295px;;
+  height: 408px;*/
+  margin-left: 300px;
+  padding-top: 250px;
+  font-family: 'Abril Fatface', cursive;
+  font-weight: bold;
+  font-size: 35px;
+  color: #222222;
+}
+
+.name {
+  font-size: 60px;
+}
+
+p {
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.intro, ul {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  color: #222222;
+  font-size: 20px;
+}
+
+
+h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+
+q {
+  background-color: #444444;
+  color: #FEFEFE;
+  display: block;
+  width: 900px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 50px;
+  font-weight: bold;
+  padding-left: 60px;
+  /*text-align: left;*/
+  /*line-height: 150px;*/
+}
+
+.firstquote {
+  height: 200px;
+}
+
+.quote {
+  width: 990px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+span {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100px;
+  height: 100px;
+  font-size: 120px;
+  color: white;
+  font-weight: bold;
+}
+
+ul {
+  margin-top: 15px;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.achievement p {
+  margin-top: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  line-height: 28px;
+}
+
+li {
+  list-style: square;
+}
+
+q:after {content: ''}
+q::before {
+  content: '“';
+  font-size: 120px;
+  margin-left: -50px;
+  margin-top: -200px;
+}
+
+hr {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 3px;
+  background-color: black;
+  color: white;
+  border: 0 none;
+}
+
+span {
+  display: inline-block;
+  padding: 0;
+  text-align: left;
+}

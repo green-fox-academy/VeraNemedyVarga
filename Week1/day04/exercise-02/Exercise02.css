@@ -1,0 +1,35 @@
+
+p {
+  width: 350px;
+  height: 130px;
+  margin: 0;
+  font-size: 36px;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  /*padding-top: 40px;*/
+  line-height: 120px;
+  box-sizing: border-box;
+}
+
+.container {
+  border: 15px solid #4285F4;
+  width: 350px;
+  margin: 0;
+}
+
+.North {
+  background-color: #E67676;
+}
+
+.East {
+  background-color: #F2F062;
+}
+
+.South {
+  background-color: #A9E6E6;
+}
+
+.West {
+  background-color: #7692E4;
+}
