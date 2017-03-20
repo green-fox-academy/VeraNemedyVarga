@@ -1,2 +1,2 @@
 # VeraNemedyVarga
-[Vera Nemedy Varga](https://github.com/greenfox-academy/VeraNemedyVarga")
+[Zodiac Syllabus](https://github.com/greenfox-academy/zodiac-syllabus)
