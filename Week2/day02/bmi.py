@@ -1,4 +1,4 @@
-massInKg = 45.5
-heightInM = 1.58
+massInKg = 81.2
+heightInM = 1.78
 
-print(massInKg / heightInM)
+print(massInKg / (heightInM ** 2))
