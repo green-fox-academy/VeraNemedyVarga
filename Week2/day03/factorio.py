@@ -7,4 +7,3 @@ def factorio(x):
         r += r * i
         i += 1
     print(r)
-factorio(4)
