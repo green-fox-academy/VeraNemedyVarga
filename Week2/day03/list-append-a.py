@@ -3,6 +3,6 @@
 # - Add all elements an `"a"` at the end
 
 nimals = ["kuty", "macs", "cic"]
-a = "a"
-for i in nimals:
-    print(i + "a")
+for i in range(len(nimals)):
+    nimals[i] += "a"
+print(nimals)

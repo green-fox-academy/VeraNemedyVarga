@@ -7,5 +7,4 @@
 # - In `colors[2]` store the shades of pink:
 #   `"orchid", "violet", "pink", "hot pink"`
 
-matrix = [[0 for j in range(0, 6)] for i in range(0, 4)]
-print(matrix)
+colors = [["lime", "forest green", "olive", "pale green", "spring green"], ["orange red", "red", "tomato"], ["orchid", "violet", "pink", "hot pink"]]
