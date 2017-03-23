@@ -9,5 +9,5 @@ numbers = [1,2,3,4,5,6,8];
 x = 7
 if x in numbers:
     print("Hoorray")
-if not(7 in numbers):
+if not(x in numbers):
     print("Nooo")
