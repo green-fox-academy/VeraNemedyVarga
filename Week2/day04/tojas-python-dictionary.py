@@ -9,4 +9,6 @@ for key in pirate:
     print(pirate[key])
 
 for key, value in pirate.items():
-    print(key + " : " + str(value))
+    #print(key + " : " + str(value))
+    print(key)
+    print(value)
