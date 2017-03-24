@@ -13,8 +13,8 @@ sentence = "dog goat dad duck doodle never"
 palindromes = []
 
 #Palindromes in sentence finder
-for j in range(0, len(sentence)):   #initiate over first index of sentence slice
-    for i in range(3, len(sentence)):   #initiate over second index
+for j in range(0, len(sentence)):   #iterate over first index of sentence slice
+    for i in range(3, len(sentence)):   #iterate over second index
         if is_palindrome(sentence[j:(i + 1)]):  #call is_palindrome on slice
             if 3 <= len(sentence[j:(i + 1)]):   #only selects the ones with length 3 or over
                 palindromes.append(sentence[j:(i + 1)])     #adds it to a list
@@ -29,9 +29,6 @@ def anagram(word1, word2):
             return True
         else:
             return False
-    for letter in word2:
-        if letter in word1:
-            return True
-        else:
-            return False
-print(anagram("dog", "baba"))
+
+print(anagram("dog", "baba"))       #test, should print False
+print(anagram("god", "dog"))        #test, should print True
