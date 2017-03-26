@@ -16,15 +16,9 @@ hashmap = [
     {3: "say goodbye"}
 ]
 
-"""for i in range(len(notSoCrypticMessage)):
-    for j in range(len(hashmap)):
-        for k in len(dictionary):
-            out += hashmap[j[k]]"""
-
-#get_value = hashmap[0]
-for elem in range(notSoCrypticMessage[0:]:
-    for dictionary in range(hashmap[0:]):
-        for k, v in dictionary:
-            print(v)
-
-print(out)
+for num in notSoCrypticMessage:
+    for dicti in hashmap:
+        for key in dicti:
+            if num == key:
+                out = dicti[key]
+                print(out)

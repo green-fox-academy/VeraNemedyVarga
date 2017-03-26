@@ -5,15 +5,11 @@
 listOfNumbers = [2, 4, 6, 8, 10, 14, 16]
 sublist = [4, 8, 12, 16]
 
-def contains_all(sub, numlist):
-    for i in sub:
-        if i in numlist:
-            x = "True"
-        else:
-            x = "False"
-    return x
-print(contains_all(sublist, listOfNumbers))
 
-#if x in numbers:
-#    print("Hoorray")
-#    print("Nooo")
+def contains_all(sublist, listOfNumbers):
+    for subnum in sublist:
+        if subnum not in listOfNumbers:
+            return False
+    return True
+
+print(contains_all(sublist, listOfNumbers))

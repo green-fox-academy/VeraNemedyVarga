@@ -1,13 +1,12 @@
 # Check if the list contains "7" if it contains print "Hoorray" otherwise print "Noooooo"
 
 numbers = [1,2,3,4,5,6,8];
-#for i in range(len(numbers)):
-#if numbers[i] == 7:
-#    print("Hoorray")
-#else:
-#    print("Noooo"
 x = 7
-if x in numbers:
-    print("Hoorray")
-if not(x in numbers):
-    print("Nooo")
+
+def elementfinder(num, list_of_num):
+    if num in list_of_num:
+        print("Hoorray")
+    else:
+        print("Nooo")
+
+elementfinder(x, numbers)
