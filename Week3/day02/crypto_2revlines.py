@@ -11,7 +11,16 @@ def decrypt(file_name):
     wfile = open("reversed.txt", 'w')
     wfile.write(reversed)
     wfile.close()
+    proporder = open("reversed.txt", 'r')
+    lista = proporder.readlines()
+    result = ""
+    for row in range(len(lista)-1, 0, -1):
+        result += lista[row]
+
+    solution = open("solution.txt", 'w')
+    solution.write(result)
+    solution.close()
     content.close()
-    return reversed
+    return result
 
 print(decrypt("reversed_lines.txt"))
