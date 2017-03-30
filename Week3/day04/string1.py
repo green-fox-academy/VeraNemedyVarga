@@ -1,12 +1,5 @@
 # Given a string, compute recursively (no loops) a new string where all the
 # lowercase 'x' chars have been changed to 'y' chars.
-"""def string_xtoy(string):
-    if 'x' not in string:
-        return string
-    else:
-        return string.replace('x', 'y')
-
-print(string_xtoy("Veraxx"))"""
 
 def string_xtoy(string):
     if len(string) == 0:
