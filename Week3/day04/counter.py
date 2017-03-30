@@ -5,7 +5,7 @@ def counter(n):
         return n
     else:
         #print(n)
-        return counter(n-1)
+        return counter(n-1), n
 
 
 print(counter(5))
