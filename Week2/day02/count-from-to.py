@@ -15,7 +15,6 @@ num1 = int(input("First number: "))
 num2 = int(input("Second number: "))
 if num2 <= num1:
     print("The second number should be bigger")
-elif num1 < num2:
+else:
     for x in range(num1, num2):
         print(x)
-        

@@ -9,5 +9,9 @@
 #
 # The pyramid should have as many lines as the number was
 num = int(input('My man, gimme a number: '))
-for i, j in zip(range(1, 2 * num + 1, 2), range(2 * num, 0, -2)):
-    print(' ' * (j // 2) + '*' * i)
+"""for i, j in zip(range(1, 2 * num + 1, 2), range(2 * num, 0, -2)):
+    print(' ' * (j // 2) + '*' * i)"""
+
+
+for i, j in zip(range(num+1, 0, -1), range(1, 2*num, 2)):
+    print(" " * (i), "*" * j)
