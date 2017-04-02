@@ -16,10 +16,32 @@ accounts = [
 
 def name_balance(data_list):
     for client_data in data_list:
-        print(client_data["client_name"], client_data["balance"])
+        namebalance = client_data["client_name"], client_data["balance"]
+        print(namebalance)
 
 name_balance(accounts)
 
-def transfer(from_client_data, to_client_data):
-    for client_data in data_list:
-        print("balance")
+def transfer(from_account_number, to_account_number, balance):
+	for client_data in accounts:
+		if from_account_number == client_data['account_number']:
+			client_data['balance']=client_data['balance'] - balance
+		if to_account_number == client_data['account_number']:
+			client_data['balance'] = client_data['balance']+balance
+	print(accounts)
+
+transfer(11234543, 43546731, 0.2)
+
+def validator(account_number):
+	for client_data in accounts:
+		if account_number == client_data['account_number']:
+			return True
+
+
+def double_validator(from_account_number, to_account_number):
+	if validator(from_account_number) and validator(to_account_number):
+		return
+	else:
+		print("404 - account not found")
+
+
+double_validator(11234543, 43546731)
