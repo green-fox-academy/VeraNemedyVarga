@@ -50,24 +50,20 @@ class Sponsor(Person):
         return self.hired_students
 
     def get_goal(self):
-        print("Hire brilliant junioor software developers.")
+        print("Hire brilliant junior software developers.")
 
 class LagopusClass(object):
-    
+    def __init__(self, class_name='Lagopus'):
+        self.class_name = class_name
+        self.students = []
+        self.mentors = []
 
-neni = Person()
-neni.introduce()
-neni.get_goal()
+    def add_student(self, Student):
+        self.students.append(Student)
+        return self.students
 
-student = Student()
-student.get_goal()
-student.introduce()
-print(student.skip_days(4))
+    def add_mentor(self, Mentor):
+        self.mentors.append(Mentor)
 
-mentor = Mentor()
-mentor.introduce()
-
-sponsor = Sponsor()
-sponsor.introduce()
-print(sponsor.hire())
-sponsor.get_goal()
+    def info(self):
+        print(self.class_name + " class has " + str(len(self.students)) + " students and " + str(len(self.mentors)) + " mentors.")
