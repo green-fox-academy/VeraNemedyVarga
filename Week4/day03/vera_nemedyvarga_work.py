@@ -11,7 +11,7 @@ class Anagram():
     def anagram(self, word1, word2):
         self.word1 = word1
         self.word2 = word2
-        if ''.join(sorted(self.word1))==''.join(sorted(self.word2)):
+        if ''.join(sorted(self.word1)) ==''.join(sorted(self.word2)):
             return True
         else:
             return False
@@ -29,6 +29,16 @@ class CountLetters():
             self.dicti[key] = value
         return self.dicti
 
+class Fibonacci():
+    def fibonacci(self, number):
+        self.number = number
+        if self.number == 0:
+            return 0
+        elif self.number==1:
+            return 1
+        else:
+            return self.fibonacci(number-1) + self.fibonacci(number-2)
 
-# Write a function, that takes a string as an argument and returns a dictionary with all letters in the string as keys, and numbers as values that shows how many occurrences there are.
-# Create a test for that.
+
+# Write a function that computes a member of the fibonacci sequence by a given index
+# Create tests that covers all types of input (like in the previous workshop exercise)

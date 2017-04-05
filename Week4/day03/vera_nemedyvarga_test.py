@@ -26,13 +26,33 @@ class TestSum(unittest.TestCase):
 class TestAnagram(unittest.TestCase):
     def test_anagram(self):
         ana = Anagram()
-        self.assertEqual(ana.anagram("", ""), True)
+        self.assertEqual(ana.anagram("alma", "mlaa"), True)
 
 class TestCountLetters(unittest.TestCase):
     def test_countletters(self):
         newword = CountLetters()
         word = "alma"
-        self.assertEqual(newword.countletters(word), {'m':1, 'l':1, 'a':2})
+        self.assertEqual(newword.countletters(word), {'m':1, 'l':1, 'a':2 })
 
+class TestFibonacci(unittest.TestCase):
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(6), 8)
+
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(0), 0)
+
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(1), 1)
+
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(2), 1)
+
+    def test_fibonacci(self):
+        fibo = Fibonacci()
+        self.assertEqual(fibo.fibonacci(3), 2)
 if __name__ == '__main__':
     unittest.main()
