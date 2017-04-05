@@ -15,13 +15,13 @@ class TestExtend(unittest.TestCase):
         self.assertEqual(extend.max_of_three(8, 8, 5), 8)
 
     def test_max_of_three_third(self):
-        self.assertEqual(extend.max_of_three(17, 12, 15), 15)
+        self.assertEqual(extend.max_of_three(17, 12, 15), 17)
 
     def test_median_four(self):
-        self.assertEqual(extend.median([7,6,3,4]), 5)
+        self.assertEqual(extend.median([7,6.5,3,4]), 5)
 
     def test_median_five(self):
-        self.assertEqual(extend.median([1,2,2,4,5]), 3)
+        self.assertEqual(extend.median([1,2,2,4,5]), 2)
 
     def test_is_vovel_a(self):
         self.assertTrue(extend.is_vovel('ú'))
