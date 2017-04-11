@@ -31,12 +31,12 @@ class Area(object):
                     self.draw_wall(x*72, y*72)
         self.f.close()
 
-    # def area_indexing(self):
-    #     self.f = open('game/area1.txt', 'r')
-    #     self.f_read = self.f.readlines()
-    #     for y in range(len(self.f_read)):
-    #         for x in range(len(self.f_read[y])):
-    #             return self.f_read[y][x]
+    def area_indexing(self):
+        self.f = open('game/area1.txt', 'r')
+        self.f_read = self.f.readlines()
+        for y in range(len(self.f_read)):
+            for x in range(len(self.f_read[y])):
+                return self.f_read[y][x]
 
 class Hero(object):
     def __init__(self):
@@ -52,13 +52,18 @@ class Hero(object):
     def on_key_press(self, e):
         self.e = e
         if self.e.keycode == 38:
-            self.characterY = self.characterY - 72
+            if self.characterY > 0:
+                self.characterY = self.characterY - 72
         elif self.e.keycode == 40:
-            self.characterY = self.characterY + 72
+            if self.characterY < 720:
+                self.characterY = self.characterY + 72
         elif self.e.keycode == 39:
-            self.characterX = self.characterX + 72
+            if self.characterX < 648:
+                self.characterX = self.characterX + 72
         elif self.e.keycode == 37:
-            self.characterX = self.characterX -72
+            if self.characterX > 0:
+             self.characterX = self.characterX -72
+
 
         self.draw_hero()
 
