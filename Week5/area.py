@@ -4,87 +4,94 @@ root = Tk()
 canvas = Canvas(root, width='720', height='792')
 canvas.pack()
 image_size = 72
-#tkinter canvasen kívülre Label tkinter UI-jal kiírni a szöveges cuccokat, ami számontartja a levelt meg ilyesmit
 # canvas.focus_set()
 class Area(object):
     def __init__(self):
         self.floor = PhotoImage(file="game/floor.png")
         self.wall = PhotoImage(file="game/wall.png")
+        self.board = [
+            [0,0,0,1,0,1,0,0,0,0],
+            [0,0,0,1,0,1,0,1,1,0],
+            [0,1,1,1,0,1,0,1,1,0],
+            [0,0,0,0,0,1,0,0,0,0],
+            [1,1,1,1,0,1,1,1,1,0],
+            [0,1,0,1,0,0,0,0,1,0],
+            [0,1,0,1,0,1,1,0,1,0],
+            [0,0,0,0,0,1,1,0,1,0],
+            [0,1,1,1,0,0,0,0,1,0],
+            [0,0,0,1,0,1,1,0,1,0],
+            [0,1,0,1,0,1,0,0,0,0]
+        ]
 
     def draw_floor(self, x, y):
         self.x = x
         self.y = y
-        canvas.create_image(x, y, anchor=NW, image=self.floor)
+        canvas.create_image(self.x, self.y, anchor=NW, image=self.floor)
 
     def draw_wall(self, x, y):
         self.x = x
         self.y = y
-        canvas.create_image(x, y, anchor=NW, image = self.wall)
+        canvas.create_image(self.x, self.y, anchor=NW, image = self.wall)
 
     def draw_area(self):
-        self.f = open('game/area1.txt', 'r')
-        self.f_read = self.f.readlines()
-        self.image = PhotoImage(file = 'game/floor.png')
-        for y in range(len(self.f_read)):
-            for x in range(len(self.f_read[y])):
-                if self.f_read[y][x] == "0":
+        for y in range(len(self.board)):
+            for x in range(len(self.board[y])):
+                if self.board[y][x] == 0:
                     self.draw_floor(x*image_size, y*image_size)
                 else:
                     self.draw_wall(x*image_size, y*image_size)
-        self.f.close()
 
-    def area_indexing(self):
-        self.f = open('game/area1.txt', 'r')
-        self.f_read = self.f.readlines()
-        self.tile_value_list = []
-        for y in range(len(self.f_read)):
-            for x in range(len(self.f_read[y])):
-                self.tile_value_list.append(self.f_read[y][x])
-                return self.tile_value_list
+    def get_position(self, x, y):
+        if self.board[y][x] == 1:
+            return False
+        else:
+            return True
 
-class GameObject(object):
+class Hero(object):
     def __init__(self):
-        pass
-        # self.characterX
-        # self.characterY
-
-class Hero(GameObject):
-    def __init__(self):
-        super().__init__()
-        self.character_down = PhotoImage(file="game/hero-down.png")
-        self.character_up = PhotoImage(file="game/hero-up.png")
-        self.character_left = PhotoImage(file="game/hero-left.png")
-        self.character_right = PhotoImage(file="game/hero-right.png")
-        self.character_images=[self.character_down, self.character_up, self.character_left, self.character_right]
+        self.hero_photo1 = PhotoImage(file = "game/hero-up.png")
+        self.hero_photo2 = PhotoImage(file = "game/hero-down.png")
+        self.hero_photo3 = PhotoImage(file = "game/hero-right.png")
+        self.hero_photo4 = PhotoImage(file = "game/hero-left.png")
         self.characterX = 0
         self.characterY = 0
         self.hero_image = 0
 
     def draw_hero(self):
         canvas.delete(self.hero_image)
-        self.hero_image = canvas.create_image(self.characterX*image_size, self.characterY*image_size, anchor=NW, image = self.character_down)
+        self.hero_image = canvas.create_image(self.characterX*image_size, self.characterY*image_size, anchor=NW, image = self.hero_photo2)
 
-    def on_key_press(self, e):
+    def move(self, e):
         self.e = e
+
         if self.e.keycode == 38:
             if self.characterY > 0:
-                self.characterY = self.characterY-1
+                if area.get_position(self.characterX, self.characterY-1) == True:
+                    self.characterY = self.characterY - 1
+
         elif self.e.keycode == 40:
             if self.characterY < 10:
-                self.characterY = self.characterY+1
+                if area.get_position(self.characterX, self.characterY+1) == True:
+                    self.characterY = self.characterY + 1
+
         elif self.e.keycode == 39:
             if self.characterX < 9:
-                self.characterX = self.characterX+1
+                if area.get_position(self.characterX+1, self.characterY) == True:
+                    self.characterX = self.characterX + 1
+
         elif self.e.keycode == 37:
             if self.characterX > 0:
-             self.characterX = self.characterX-1
+                if area.get_position(self.characterX-1, self.characterY) == True:
+                    self.characterX = self.characterX -1
+
         self.draw_hero()
 
-class Skeleton(GameObject):
+class Skeleton(object):
     def __init__(self):
+        #super().__init__()
         self.skeleton = PhotoImage(file = "game/skeleton.png")
-        self.characterX = 2
-        self.characterY = 2
+        self.characterX = 5
+        self.characterY = 5
         self.skeleton_image = 0
 
     def draw_skeleton(self):
@@ -107,23 +114,15 @@ class Skeleton(GameObject):
              self.characterX = self.characterX-1
         self.draw_skeleton()
 
-
-
-    # def move_hero(self):
-    #     # self.on_key_press(self.e)
-    #     # self.e = e
-    #     area.area_indexing()
-    #     if self.f_read[y][x] == 1:
-    #         pass
-
 area = Area()
 area.draw_area()
-gameobject= GameObject()
 hero = Hero()
 skeleton = Skeleton()
-canvas.bind("<KeyPress>", hero.on_key_press)
+#area.draw_area()
+canvas.bind("<KeyPress>", hero.move)
 canvas.focus_set()
-skeleton.draw_skeleton()
+area.get_position(3, 0)
+
 hero.draw_hero()
-#hero.move_hero()
+skeleton.draw_skeleton()
 root.mainloop()
