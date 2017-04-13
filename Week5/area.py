@@ -1,4 +1,5 @@
 from tkinter import *
+import random
 
 root = Tk()
 canvas = Canvas(root, width='720', height='792')
@@ -53,7 +54,7 @@ class Hero(object):
         self.hero_photo2 = PhotoImage(file = "game/hero-down.png")
         self.hero_photo3 = PhotoImage(file = "game/hero-right.png")
         self.hero_photo4 = PhotoImage(file = "game/hero-left.png")
-        self.hero_photo = self.hero_photo1
+        self.hero_photo = self.hero_photo2
         self.characterX = 0
         self.characterY = 0
         self.hero_image = 0
@@ -63,7 +64,7 @@ class Hero(object):
         self.hero_photo = self.hero_photo
         self.hero_image = canvas.create_image(self.characterX*image_size, self.characterY*image_size, anchor=NW, image = self.hero_photo)
 
-    def move(self, e):
+    def move_hero(self, e):
         self.e = e
 
         if self.e.keycode == 38:
@@ -94,38 +95,36 @@ class Hero(object):
 
 class Skeleton(object):
     def __init__(self):
-        #super().__init__()
         self.skeleton = PhotoImage(file = "game/skeleton.png")
-        self.characterX = 5
-        self.characterY = 5
+        self.characterX = random.randint(0, 9)
+        self.characterY = random.randint(0, 10)
+        while area.get_position(self.characterX, self.characterY) == False:
+            self.characterX = random.randint(0, 9)
+            self.characterY = random.randint(0, 10)
         self.skeleton_image = 0
 
     def draw_skeleton(self):
         canvas.delete(self.skeleton_image)
         self.skeleton_image = canvas.create_image(self.characterX * image_size, self.characterY * image_size, anchor = NW, image = self.skeleton)
 
-    def on_key_press(self, e):
-        self.e = e
-        if self.e.keycode == 38:
-            if self.characterY > 0:
-                self.characterY = self.characterY-1
-        elif self.e.keycode == 40:
-            if self.characterY < 10:
-                self.characterY = self.characterY+1
-        elif self.e.keycode == 39:
-            if self.characterX < 9:
-                self.characterX = self.characterX+1
-        elif self.e.keycode == 37:
-            if self.characterX > 0:
-             self.characterX = self.characterX-1
-        self.draw_skeleton()
+
 
 area = Area()
 area.draw_area()
 hero = Hero()
-skeleton = Skeleton()
-canvas.bind("<KeyPress>", hero.move)
+skeleton1 = Skeleton()
+skeleton2 = Skeleton()
+skeleton3 = Skeleton()
+
+#canvas.bind("<KeyPress>", skeleton.move_skeleton)
+canvas.bind("<KeyPress>", hero.move_hero)
+
 canvas.focus_set()
 hero.draw_hero()
-skeleton.draw_skeleton()
+skeleton1.draw_skeleton()
+skeleton2.draw_skeleton()
+skeleton3.draw_skeleton()
+
+
+
 root.mainloop()
