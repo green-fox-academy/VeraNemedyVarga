@@ -53,13 +53,15 @@ class Hero(object):
         self.hero_photo2 = PhotoImage(file = "game/hero-down.png")
         self.hero_photo3 = PhotoImage(file = "game/hero-right.png")
         self.hero_photo4 = PhotoImage(file = "game/hero-left.png")
+        self.hero_photo = self.hero_photo1
         self.characterX = 0
         self.characterY = 0
         self.hero_image = 0
 
     def draw_hero(self):
         canvas.delete(self.hero_image)
-        self.hero_image = canvas.create_image(self.characterX*image_size, self.characterY*image_size, anchor=NW, image = self.hero_photo2)
+        self.hero_photo = self.hero_photo
+        self.hero_image = canvas.create_image(self.characterX*image_size, self.characterY*image_size, anchor=NW, image = self.hero_photo)
 
     def move(self, e):
         self.e = e
@@ -68,21 +70,25 @@ class Hero(object):
             if self.characterY > 0:
                 if area.get_position(self.characterX, self.characterY-1) == True:
                     self.characterY = self.characterY - 1
+                    self.hero_photo = self.hero_photo1
 
         elif self.e.keycode == 40:
             if self.characterY < 10:
                 if area.get_position(self.characterX, self.characterY+1) == True:
                     self.characterY = self.characterY + 1
+                    self.hero_photo = self.hero_photo2
 
         elif self.e.keycode == 39:
             if self.characterX < 9:
                 if area.get_position(self.characterX+1, self.characterY) == True:
                     self.characterX = self.characterX + 1
+                    self.hero_photo = self.hero_photo3
 
         elif self.e.keycode == 37:
             if self.characterX > 0:
                 if area.get_position(self.characterX-1, self.characterY) == True:
                     self.characterX = self.characterX -1
+                    self.hero_photo = self.hero_photo4
 
         self.draw_hero()
 
@@ -118,11 +124,8 @@ area = Area()
 area.draw_area()
 hero = Hero()
 skeleton = Skeleton()
-#area.draw_area()
 canvas.bind("<KeyPress>", hero.move)
 canvas.focus_set()
-area.get_position(3, 0)
-
 hero.draw_hero()
 skeleton.draw_skeleton()
 root.mainloop()
