@@ -7,16 +7,19 @@ class Aircraft():
         self.damage = self.base_damage * self.current_ammo
 
     def fight(self):
+        self.damage_done = self.damage
         self.current_ammo = 0
-        return self.damage
+        return self.damage_done
 
     def refill(self, ammo_input):
         self.ammo_input = ammo_input
         if ammo_input < self.max_ammo:
             self.current_ammo += ammo_input
+            self.damage = self.base_damage * self.current_ammo
             return 0
         else:
             self.current_ammo = self.max_ammo
+            self.damage = self.base_damage * self.current_ammo
             return ammo_input - self.max_ammo
 
     def get_type(self):
@@ -52,6 +55,10 @@ class Carrier():
         for aircraft in self.aircraft_list:
             self.current_carrier_ammo = aircraft.refill(self.current_carrier_ammo)
 
+    def carrier_fight(self, enemy_carrier):
+        for aircraft in self.aircraft_list:
+            enemy_carrier.health_point -= aircraft.fight()
+
 
 
 
@@ -59,6 +66,7 @@ f16 = F16()
 f35 =  F35()
 
 carrier = Carrier(25, 0)
+u_boat = Carrier(20, 1000)
 print(f16.base_damage)
 print(f35.max_ammo)
 print(f16.get_type())
@@ -78,3 +86,6 @@ print(carrier.aircraft_list[0].current_ammo)
 print(carrier.aircraft_list[1].current_ammo)
 print(carrier.aircraft_list[2].current_ammo)
 print(carrier.aircraft_list[3].current_ammo)
+
+carrier.carrier_fight(u_boat)
+print(u_boat.health_point)
