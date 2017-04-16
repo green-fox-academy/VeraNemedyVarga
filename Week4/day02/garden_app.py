@@ -1,46 +1,49 @@
 class Garden(object):
     def __init__(self):
-        self.garden = []
+        self.flowers_and_trees = []
 
-    def add_plant(self, plant):
-        self.garden.append(plant)
+    def watering_garden(self, spent_liters):
+        self.spent_liters = spent_liters
+        self.counter = 0
+        for plant in self.flowers_and_trees:
+            self.counter += plant.needs_water()
 
+        for plant in self.flowers_and_trees:
+            if plant.needs_water() == 1:
+                if plant.plant_type == "flower":
+                    plant.current += spent_liters / self.counter * 0.75
+                else:
+                    plant.current += spent_liters / self.counter * 0.4
 
-    def watering(self, water_amount):
-        self.water_amount = water_amount
-
-
-        if flower.current < 5:
-            self.num_of_items.append(flower)
-        if tree.current < 10:
-            self.num_of_items.append(tree)
-
-        for flower in self.num_of_items:
-            flower.current += water_amount * len(num_of_items) * 0.75
-        for tree in self.num_of_items:
-            tree.current += water_amount * len(num_of_items) * 0.75
-
+    def check_status(self):
+        for plant in self.flowers_and_trees:
+            pass
 
 
-class Flower(object):
-    def __init__(self, current, color):
+class Plant(object):
+    def __init__(self, current, color, plant_type):
         self.current = current
         self.color = color
+        self.plant_type = plant_type
+        garden.flowers_and_trees.append(self)
 
-        #def add_flower(self, flower)
-
-class Tree(object):
-    def __init__(self, current, color):
-        self.current = current
-        self.color = color
+    def needs_water(self):
+        if (self.plant_type == "flower" and self.current < 5) or (self.plant_type == "tree" and self.current < 10):
+            return 1
+        else:
+            return 0
 
 
 garden = Garden()
-flower1 = Flower(3, "blue")
-flower2 = Flower(2, "red")
-flower3 = Flower(5, "green")
-flower4 = Flower(4, "yellow")
-#
-#
-garden.garden.append(flower1)
-print(garden)
+flower1 = Plant(3, "blue", "flower")
+flower2 = Plant(2, "yellow", "flower")
+tree1 = Plant(4, "purple", "tree")
+tree2 = Plant(11, "orange", "tree")
+print(flower1.current, flower1.color)
+print(garden.flowers_and_trees)
+print(garden.flowers_and_trees[2].plant_type)
+garden.watering_garden(7)
+print(garden.flowers_and_trees[0].current)
+print(garden.flowers_and_trees[1].current)
+print(garden.flowers_and_trees[2].current)
+print(garden.flowers_and_trees[3].current)
