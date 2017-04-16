@@ -11,14 +11,16 @@ class Garden(object):
         for plant in self.flowers_and_trees:
             if plant.needs_water() == 1:
                 if plant.plant_type == "flower":
+                    print("The " + str(plant.color) + " Flower needs water." )
                     plant.current += spent_liters / self.counter * 0.75
                 else:
+                    print("The " + str(plant.color) + " Tree needs water." )
                     plant.current += spent_liters / self.counter * 0.4
-
-    def check_status(self):
-        for plant in self.flowers_and_trees:
-            pass
-
+            else:
+                if plant.plant_type == "flower":
+                    print("The " + str(plant.color) + " Flower doesn't need water." )
+                else:
+                    print("The " + str(plant.color) + " Tree doesn't need water." )
 
 class Plant(object):
     def __init__(self, current, color, plant_type):
@@ -39,11 +41,9 @@ flower1 = Plant(3, "blue", "flower")
 flower2 = Plant(2, "yellow", "flower")
 tree1 = Plant(4, "purple", "tree")
 tree2 = Plant(11, "orange", "tree")
-print(flower1.current, flower1.color)
-print(garden.flowers_and_trees)
-print(garden.flowers_and_trees[2].plant_type)
-garden.watering_garden(7)
-print(garden.flowers_and_trees[0].current)
-print(garden.flowers_and_trees[1].current)
-print(garden.flowers_and_trees[2].current)
-print(garden.flowers_and_trees[3].current)
+
+garden.watering_garden(0)
+print('\n')
+garden.watering_garden(40)
+print('\n')
+garden.watering_garden(70)
