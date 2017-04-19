@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-flow: column;
+}
+
+div {
+    width: 400px;
+    height: 500px;
+}
+
+.item_green {
+    background-color: #51D400;
+    height: 25%;
+    width: 400px;
+    order: 1;
+}
+
+.item_purple {
+    background-color: #B02AFF;
+    height: 25%;
+    width: 400px;
+    order: 2;
+}
+
+.item_yellow {
+    background-color: #FFD62A;
+    height: 50%;
+    width: 400px;
+    order: 3;
+}
