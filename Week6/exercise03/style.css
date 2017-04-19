@@ -1,0 +1,33 @@
+* {
+    margin: auto;
+}
+
+.container {
+    display: flex;
+}
+
+div {
+    min-width: 200px;
+    height: 200px;
+}
+
+.item_green {
+    background-color: #51D400;
+    flex-grow: 1;
+    min-width: 25%;
+    order: 3;
+}
+
+.item_yellow {
+    background-color: #FFD62A;
+    flex-grow: 1;
+    min-width: 50%;
+    order: 2;
+}
+
+.item_purple {
+    background-color: #B02AFF;
+    flex-grow: 1;
+    min-width: 25%
+    order: 1;
+}
