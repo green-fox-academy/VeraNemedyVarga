@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+}
+
+.container {
+    width: 750px;
+    height: 280px;
+}
+
+.item_yellow {
+    position: fixed;
+    background-color: #FFD62A;
+    width: 750px;
+    height: 280px;
+}
+
+.item_purple {
+    position: fixed;
+    background-color: #B02AFF;
+    width: 100px;
+    height: 100px;
+    left: 325px;
+    top: 90px;
+}
