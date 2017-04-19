@@ -1,0 +1,20 @@
+.container {
+    height: 280px;
+    width: 100%;
+    display: flex;
+    background-color: #FFD62A;
+    padding-left: 0;
+}
+
+.item {
+    background-color: #B02AFF;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    top: 200px;
+    margin-right: 10px;
+    margin-left: 0;
+    margin-top: 90px;
+    width: 100px;
+    height: 100px;
+}
