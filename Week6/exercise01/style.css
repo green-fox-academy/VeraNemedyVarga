@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+}
+div {
+    min-width: 200px;
+    height: 200px;
+}
+
+.item_green {
+    background-color: #51D400;
+}
+
+.item_yellow {
+    background-color: #FFD62A;
+}
+
+.item_purple {
+    background-color: #B02AFF;
+}
