@@ -15,3 +15,28 @@
 # Waits for the user input
 # Print the result
 # Exit
+
+
+userinput = str(input("Please type in the expression: "))
+userinput = userinput.split(" ")
+
+result = 0
+def calculator(userinput):
+
+    if userinput[0] == '+':
+         result = int(userinput[1]) + int(userinput[2])
+         print(result)
+    elif userinput[0] == '-':
+        result = int(userinput[1]) - int(userinput[2])
+        print(result)
+    elif userinput[0] == '*':
+        result = int(userinput[1]) * int(userinput[2])
+        print(result)
+    elif userinput[0] == '/':
+        result = float(userinput[1]) / float(userinput[2])
+        print(result)
+    elif userinput[0] == '%':
+        result = float(userinput[1]) % float(userinput[2])
+        print(result)
+
+calculator(userinput)
