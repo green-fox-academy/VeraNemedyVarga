@@ -21,21 +21,10 @@ def name_balance(data_list):
 
 name_balance(accounts)
 
-def transfer(from_account_number, to_account_number, balance):
-	for client_data in accounts:
-		if from_account_number == client_data['account_number']:
-			client_data['balance']=client_data['balance'] - balance
-		if to_account_number == client_data['account_number']:
-			client_data['balance'] = client_data['balance']+balance
-	print(accounts)
-
-transfer(11234543, 43546731, 0.2)
-
 def validator(account_number):
 	for client_data in accounts:
 		if account_number == client_data['account_number']:
 			return True
-
 
 def double_validator(from_account_number, to_account_number):
 	if validator(from_account_number) and validator(to_account_number):
@@ -43,5 +32,16 @@ def double_validator(from_account_number, to_account_number):
 	else:
 		print("404 - account not found")
 
-
 double_validator(11234543, 43546731)
+
+def transfer(from_account_number, to_account_number, balance):
+	if double_validator(from_account_number, to_account_number):
+		for client_data in accounts:
+			if from_account_number == client_data['account_number']:
+				client_data['balance']=client_data['balance'] - balance
+			if to_account_number == client_data['account_number']:
+				client_data['balance'] = client_data['balance']+balance
+
+
+transfer(11234543, 43546731, 0.2)
+print(accounts)
