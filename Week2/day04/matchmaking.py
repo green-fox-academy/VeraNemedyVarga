@@ -2,29 +2,17 @@
 # Exepected output: ["Eve", "Joe", "Ashley", "Fred"...]
 
 girls = ["Eve","Ashley","Bözsi","Kat","Jane"]
-boys = ["Joe","Fred","Béla","Todd","Neef","Jeff"]
+boys = ["Joe","Fred","Béla","Todd","Neef", "Jeff"]
 order = []
 
-for i in girls[i]:
-    order = [girls[i]]
+longer_list = max(len(girls), len(boys))
+appendrest = boys if longer_list == len(boys) else girls
+difference = (longer_list - min(len(girls), len(boys)))
+
+for i, j in zip(range(0, len(girls)), range(0, len(boys))):
+    order.append(girls[i])
+    order.append(boys[j])
+if difference != 0:
+    order += (appendrest[-difference:])
+
 print(order)
-
-
-
-
-
-#for i in range(len(girls)):
-#    order.append(girls[i])
-#for j in range(len(boys)):
-#order.append(boys[j])
-#len(order) = len(girls) + len(boys)
-"""len(girls) = a
-len(boys) = b
-for x in len(a + b):
-    if x % 2 == 0:
-        order.append(girls[x])
-    elif x % 2 != 0:
-        order.append(boys[x])
-
-#order.append(x,y)
-print(order)"""
