@@ -15,8 +15,10 @@ var lineCount = 6;
 //
 // The square should have as many lines as lineCount is
 
-console.log("%".repeat(lineCount - 1));
-for (var i = 0; i < lineCount - 2; i++) {
-    console.log("%   %")
+for (var i = 0; i < lineCount; i++) {
+    if (i === 0 || i === lineCount - 1) {
+        console.log("%".repeat(lineCount - 1))
+    } else {
+        console.log("%" + " ".repeat(lineCount - 3) + "%");
+    }
 }
-console.log("%".repeat(lineCount - 1));
