@@ -11,4 +11,4 @@ var myAge = 26;
 var myHeight = 1.58;
 var isMarried = false;
 
-console.log(myName + " " + myAge + " " + myHeight + " " + isMarried)
+console.log(myName + " " + myAge + " " + myHeight + " " + isMarried);
