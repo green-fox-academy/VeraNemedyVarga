@@ -5,14 +5,14 @@
 //     - Prepare for the special case when no parameters are given
 // - Greet `al`
 
-var al = "Greenfox"
+var al = "Greenfox";
 
 function greet(name) {
     if (typeof name === 'string') {
-        console.log("Greetings, dear", name)
+        console.log("Greetings, dear", name);
     } else {
         console.log("No one to greet");
     }
 }
 
-greet(al)
+greet(al);

@@ -7,7 +7,7 @@ function sum(endNum) {
     for (var i = 1; i < endNum + 1; i++) {
         result += i;
     }
-    return result
+    return result;
 }
 
 console.log(sum(4));
