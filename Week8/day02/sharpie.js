@@ -19,3 +19,5 @@ var pen = new sharpie("blue", 0.4, 40)
 console.log(pen);
 var usedPen = pen.use();
 console.log(usedPen);
+pen.use();
+console.log(pen.inkAmount);
