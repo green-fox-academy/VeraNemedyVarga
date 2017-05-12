@@ -1,0 +1,59 @@
+.post {
+    display: flex;
+    flex-direction: row;
+}
+
+.position {
+    padding: 20px;
+    align-self: center;
+    /*text-align: em;*/
+    font-size: 20px;
+    color: #C6C5C6;
+    font-weight: bold;
+}
+
+.voting_buttons {
+    display: block;
+
+}
+
+.upvote, .downvote {
+    padding: 5px;
+    border: 0;
+    background: transparent;
+}
+
+.scores {
+    line-height: 1em;
+    text-align: center;
+    padding-bottom: 5px;
+    color: #CCD0D5;
+    font-weight: bold;
+}
+
+.thread {
+    padding-left: 20px;
+    padding-top: 10px;
+    display: inline-block;
+}
+
+.threadtitle {
+    text-decoration: none;
+    font-size: 20px;
+    color: #2F63FF;
+}
+
+.threadcontent {
+    margin: 5px 0;
+    font-size: 15px;
+}
+
+.modify, .remove {
+    background: transparent;
+    padding: 0;
+    padding-right: 10px;
+    border: 0;
+    font-weight: bold;
+    color: #CCD0D5;
+
+}

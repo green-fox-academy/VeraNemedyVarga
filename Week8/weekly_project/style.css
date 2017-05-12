@@ -1,0 +1,16 @@
+.voting {
+    display: flex;
+    flex-direction: column;
+}
+
+.threads {
+    /*justify-content: center;*/
+    list-style: none;
+    display: flex;
+}
+
+.arrow, .counter {
+    width: 15px;
+    height: 15px;
+    margin: auto;
+}
