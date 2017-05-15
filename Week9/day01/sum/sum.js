@@ -31,10 +31,5 @@
      }
  }
 
- try {
-     sumClass.sum("bal")
- } catch (err) {
-     console.log(err.message);
- }
-
+console.log(sumClass.sum([1, 2, 3]));
 module.exports = sumClass;

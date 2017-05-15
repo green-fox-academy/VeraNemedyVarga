@@ -19,8 +19,10 @@ test('returns sum of numbers in list', function (t) {
     t.end();
 })
 
-test('sums one element, zero in list to zero', function(t) {
-    t.equal(summing.sum([0]), 0);
+test('returns error message for null in list', function(t) {
+    t.throws(function(){
+        throw summing.sum(null)
+    }, Error, 'parameter is not a list');
     t.end();
 })
 
