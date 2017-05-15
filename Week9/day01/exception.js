@@ -10,6 +10,8 @@ let  addString = function(str1, str2, printStr){
       throw new Error('"str1" is not a string');
   } else if (typeof str2 !== 'string') {
       throw new Error('"str2" is not a string');
+  } else if (typeof printStr !== 'function') {
+      throw new Error('"printStr" must be a function');
   }
   printStr(newStr);
 }
@@ -21,7 +23,7 @@ let printStr = function(str) {
 // addString(1234, 56789, 'printStr');
 
 try {
-    addString('1234', '5678', printStr);
+    addString('1234', '5678', "printStr");
 } catch (err) {
     console.log('catching error: ');
     console.log(err.message);
