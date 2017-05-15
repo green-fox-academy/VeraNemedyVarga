@@ -2,6 +2,8 @@ let test = require('tape');
 let apple = require('./apple');
 
 test('return "apple"', function(t){
-    t.equal('apple', apple.getApple());
+    var actual = apple.getApple();
+    var expected = "apple";
+    t.equal(actual, expected);
     t.end();
 });
