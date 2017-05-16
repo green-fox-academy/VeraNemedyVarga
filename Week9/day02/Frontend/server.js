@@ -11,7 +11,7 @@ app.get('/', function(req, res) {
 
 app.get('/doubling', function(req, res) {
     let queryInupt = req.query.input;
-    if (queryInupt === '') {
+    if (typeof queryInupt === undefined) {
         res.send({
             error: "Please provide an input"
         })
@@ -23,19 +23,30 @@ app.get('/doubling', function(req, res) {
     }
 });
 
+app.get('/greeter', function(req, res) {
+    var name = req.params.name;
+    var title = req.params.title;
+    if (name == undefined || title == undefined){
+        res.send({
+            error: "Please provide a name!"
+        });
+    } else if (name == "Petike", title == "student"){
+        res.send({
+            welcome_message: "Oh, hi there Petike, my dear student!"
+        })
+    }
+});
+
 
 app.listen(8080);
 
-
-
-// Create a GET /doubling endpoint
-// That receives a query parameter: input=15
-// And responds with a json object with the doubled amount of the input:
+// Create a GET /greeter endpoint
+// that receives a query parameter name=Petike&title=student
+// and responds with an awesome greeting json object:
 // {
-//   "received": 15,
-//   "result": 30
+//   "welcome_message": "Oh, hi there Petike, my dear student!"
 // }
-// if no input is provided:
+// if e.g. no name (or title) is provided:
 // {
-//   "error": "Please provide an input!"
+//   "error": "Please provide a name!"
 // }
