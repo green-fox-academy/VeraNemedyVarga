@@ -10,35 +10,37 @@ app.get('/', function(req, res) {
 });
 
 app.get('/doubling', function(req, res) {
-    let queryInupt = req.query.input;
-    if (typeof queryInupt === undefined) {
+    let queryInput = req.query.input;
+    if (req.query.input === undefined) {
         res.send({
-            error: "Please provide an input"
+            error: "Please provide an input!"
         })
     } else {
+        console.log(req.query);
         res.send({
-            received: queryInupt,
-            result: queryInupt * 2
+            received: queryInput,
+            result: queryInput * 2
         })
     }
 });
 
 app.get('/greeter', function(req, res) {
-    var name = req.params.name;
-    var title = req.params.title;
-    if (name == undefined || title == undefined){
+    var name = req.query.name;
+    var title = req.query.title;
+    if (name === undefined){
         res.send({
             error: "Please provide a name!"
         });
-    } else if (name == "Petike", title == "student"){
+    } else if (title === undefined) {
         res.send({
-            welcome_message: "Oh, hi there Petike, my dear student!"
+            error: "Please provide a title!"
+        });
+    } else {
+        res.send({
+            welcome_message: "Oh, hi there " + name + ", my dear " + title + "!"
         })
     }
 });
-
-
-app.listen(8080);
 
 // Create a GET /greeter endpoint
 // that receives a query parameter name=Petike&title=student
@@ -50,3 +52,5 @@ app.listen(8080);
 // {
 //   "error": "Please provide a name!"
 // }
+
+app.listen(8080);
