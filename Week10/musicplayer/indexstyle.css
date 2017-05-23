@@ -1,0 +1,159 @@
+.controlpanel {
+    display: flex;
+    max-width: 1000px;
+    margin: auto;
+    flex-direction: column;
+    box-sizing: border-box;
+    /*border: 1px solid grey;*/
+    border-radius: 10px;
+    padding: 0.5%;
+    box-shadow: 10px 10px 5px -8px rgba(173,173,173,1);
+    /*justify-content: center;*/
+    background: radial-gradient(ellipse at center, rgba(114,61,102,0.8) 0%,rgba(113,60,101,0.8) 1%,rgba(112,59,100,0.87) 2%,rgba(1,1,5,0.73) 99%,rgba(1,1,5,0.73) 100%);
+}
+
+.controlpanel * {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 400;
+    border-radius: 10px;
+    color: white;
+}
+
+.head {
+    max-width: auto;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 30%;
+    height: auto;
+    padding-right: 5px;
+}
+
+.logoimage {
+    width: 60%;
+    height: 80%;
+}
+
+.currentlyPlaying {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    height: 80px;
+    padding-left: 1px;
+    background-color: black;
+    opacity: 0.7;
+    /*background-color: #F5F5F5;*/
+}
+
+.star, .add {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+    align-self: center;
+}
+
+.add {
+    width: 50px;
+    height: 30px;
+}
+
+.musiclists {
+    height: 500px;
+    margin-top: -10%;
+    max-width: auto;
+    display: flex;
+    justify-content: space-around;
+    /*background-color: black;*/
+    opacity: 0.7;
+}
+
+.playlists {
+    height: auto;
+    width: 50%;
+    margin-top: 8%;
+    background-color: black;
+    /*opacity: ;*/
+    /*background-color: #F5F5F5;*/
+}
+
+.playlistcontainer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid white;
+    border-radius: 0;
+
+}
+
+.playheader {
+    font-size: 18px;
+    margin-left: 4%;
+}
+
+.playlistfav {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    margin-right: 5%;
+
+}
+
+.tracks {
+    height: auto;
+    width: 50%;
+    /*background-color: #F5F5F5;*/
+    border-left: 0.5px solid grey;
+    /*margin-top: -8%;*/
+    background-color: black;
+    /*opacity: 0.7;*/
+}
+
+.footer {
+    width: auto;
+    height: 50px;
+    border-top: 0.5px solid grey;
+    background-color: black;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+}
+
+.playicons {
+    width: 12%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5%;
+    margin-left: 2%;
+}
+
+.pause, .rewind, .forward {
+    width: 25px;
+    height: 25px;
+
+}
+
+img {
+   -webkit-filter: invert(100%);
+   filter: invert(100%);
+}
+
+.volumeoff, .hidden {
+    display: none;
+}
+
+.volumeshuffle {
+    width: 8%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5%;
+    /*margin-right: 20%;*/
+}
+
+.shuffle, .volume, .volumeoff {
+    width: 25px;
+    height: 25px;
+}

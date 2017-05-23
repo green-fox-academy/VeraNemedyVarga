@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fox Music Player</title>
+        <link rel="stylesheet" href="trackstyle.css">
+        <link rel="stylesheet" href="indexstyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Kanit:400,600" rel="stylesheet">
+    </head>
+    <body>
+        <main class="controlpanel">
+            <div class="head">
+                <div class="logo">
+                    <img src="assets/fox.svg" class="logoimage">
+                </div>
+
+                <div class="currentlyPlaying">
+
+                    <img src="assets/favs.svg" class="add">
+                    <img src="assets/star.svg" class="star">
+
+                </div>
+            </div>
+
+            <div class="musiclists">
+
+                <div class="playlists">
+                    <div class="playlistcontainer">
+                    <p class="playheader">Playlists</p>
+                    <img src="assets/favs.svg" class="playlistfav">
+                    </div>
+                </div>
+
+                <div class="tracks"></div>
+
+            </div>
+            <div class="footer">
+                <div class="playicons">
+                    <img src="assets/rewind.svg" class="rewind">
+                    <img src="assets/pause.svg" class="pause">
+                    <img src="assets/fastforward.svg" class="forward">
+                </div>
+
+                <div class="seeker">
+                    <time></time>
+                    <input type="range" name="seeker" >
+                </div>
+
+                <div class="volumeshuffle">
+                    <img src="assets/shuffle.svg" class="shuffle">
+                    <img src="assets/volume.svg" class="volume">
+                    <img src="assets/volume-off.svg" class="volumeoff hidden visible">
+
+                </div>
+
+                <div class="volumeseeker">
+                    <input type="range" name="volumeseeker" class="volumeseeker">
+                </div>
+            </div>
+        </main>
+
+    </body>
+</html>
